@@ -1,0 +1,9 @@
+{
+	"name": "ADFRiteshTest",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3a8e5ae2-cee9-45c7-9c97-5783c9057410",
+		"tenantId": "28c283bc-b681-4f35-9a51-efb464715579"
+	}
+}
