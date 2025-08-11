@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFRiteshTest"
+		},
+		"AzureDataLakeStorage_linkedService_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LS_adfstorageblob_connectionString": {
+			"value": ""
+		},
+		"onpremsqlserver_connectionString": {
+			"value": "Integrated Security=False;Data Source=DESKTOP-E1LHSQ4;Initial Catalog=AdventureWorksLT2017;User ID=read_user"
+		},
+		"AzureDataLakeStorage_linkedService_properties_typeProperties_url": {
+			"value": "https://mkdatalakegen2storage.dfs.core.windows.net/"
+		},
+		"AzureDatabricks_LinkedService_properties_typeProperties_existingClusterId": {
+			"value": "0728-034058-ps4hn3l"
+		},
+		"AzureKeyVault_LinkedService_properties_typeProperties_baseUrl": {
+			"value": "https://kv-mrk-01.vault.azure.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "ritsqlserver.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "testdb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "saadmin"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
