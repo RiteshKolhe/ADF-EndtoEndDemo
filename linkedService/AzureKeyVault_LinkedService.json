@@ -1,11 +1,11 @@
 {
 	"name": "AzureKeyVault_LinkedService",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "https://kv-mrk-01.vault.azure.net/"
+			"baseUrl": "https://KVTest69.vault.azure.net/"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
