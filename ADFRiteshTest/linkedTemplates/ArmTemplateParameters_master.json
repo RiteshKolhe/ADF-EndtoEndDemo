@@ -24,7 +24,7 @@
 			"value": "0728-034058-ps4hn3l"
 		},
 		"AzureKeyVault_LinkedService_properties_typeProperties_baseUrl": {
-			"value": "https://kv-mrk-01.vault.azure.net/"
+			"value": "https://KVTest69.vault.azure.net/"
 		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
 			"value": "ritsqlserver.database.windows.net"
