@@ -10,6 +10,9 @@
 					"name": "derivedColumn1"
 				},
 				{
+					"name": "select1"
+				},
+				{
 					"name": "data"
 				}
 			],
@@ -26,7 +29,19 @@
 				"     ),",
 				"     order: 0,",
 				"     allowSchemaDrift: true) ~> data",
-				"data derive(FirstName = upper(FirstName)) ~> derivedColumn1"
+				"data derive(FirstName = upper(FirstName)) ~> derivedColumn1",
+				"derivedColumn1 select(mapColumn(",
+				"          EmployeeID,",
+				"          FirstName,",
+				"          LastName,",
+				"          Email,",
+				"          Phone,",
+				"          Department,",
+				"          JoiningDate,",
+				"          Salary",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
