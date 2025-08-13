@@ -11,7 +11,9 @@
 				"defaultValue": "employee.csv"
 			}
 		},
-		"annotations": [],
+		"annotations": [
+			"copy"
+		],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
