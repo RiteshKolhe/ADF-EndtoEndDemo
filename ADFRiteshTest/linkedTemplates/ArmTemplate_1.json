@@ -13,14 +13,14 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline_copy_data')]",
+			"name": "[concat(parameters('factoryName'), '/copy_pipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Data flow1",
-						"type": "ExecuteDataFlow",
+						"name": "copy address table",
+						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
 							"timeout": "0.12:00:00",
@@ -31,65 +31,51 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"dataflow": {
-								"referenceName": "dataflow1",
-								"type": "DataFlowReference",
-								"parameters": {},
-								"datasetParameters": {
-									"emp": {
-										"file_name": "employee.csv"
-									},
-									"dept": {
-										"file_name": "employee.csv"
-									},
-									"sink1": {}
+							"source": {
+								"type": "SqlServerSource",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "ParquetSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "ParquetWriteSettings"
 								}
 							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine"
-						}
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_SqlServer_Address_Source",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_Datalakegen2_Address_Dest",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
 					}
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"parameters": {
-					"source_file": {
-						"type": "string"
-					},
-					"dest_container": {
-						"type": "string"
-					},
-					"filter_param": {
-						"type": "array",
-						"defaultValue": [
-							1,
-							2,
-							3,
-							4,
-							5,
-							6
-						]
-					}
-				},
-				"variables": {
-					"pipeline_name": {
-						"type": "String"
-					},
-					"val": {
-						"type": "Integer"
-					},
-					"file_available": {
-						"type": "Boolean",
-						"defaultValue": false
-					}
-				},
 				"annotations": [],
-				"lastPublishTime": "2025-08-11T09:45:23Z"
+				"lastPublishTime": "2023-07-26T11:29:57Z"
 			},
 			"dependsOn": []
 		},
@@ -162,9 +148,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pipeline_copy_data')]"
-			]
+			"dependsOn": []
 		}
 	]
 }

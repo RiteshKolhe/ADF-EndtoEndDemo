@@ -8,9 +8,6 @@
 		"AzureDataLakeStorage_linkedService_accountKey": {
 			"value": ""
 		},
-		"AzureSqlDatabase1_password": {
-			"value": ""
-		},
 		"LS_adfstorageblob_connectionString": {
 			"value": ""
 		},
