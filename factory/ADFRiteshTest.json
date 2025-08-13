@@ -1,5 +1,13 @@
 {
 	"name": "ADFRiteshTest",
+	"properties": {
+		"globalParameters": {
+			"global_param_1": {
+				"type": "string",
+				"value": "mku"
+			}
+		}
+	},
 	"location": "eastus",
 	"identity": {
 		"type": "SystemAssigned",
