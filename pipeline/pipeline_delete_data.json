@@ -1,6 +1,7 @@
 {
 	"name": "pipeline_delete_data",
 	"properties": {
+		"description": "delete",
 		"activities": [
 			{
 				"name": "Delete1",
