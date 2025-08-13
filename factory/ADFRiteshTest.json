@@ -6,6 +6,9 @@
 				"type": "string",
 				"value": "mku"
 			}
+		},
+		"globalConfigurations": {
+			"PipelineBillingEnabled": "true"
 		}
 	},
 	"location": "eastus",
