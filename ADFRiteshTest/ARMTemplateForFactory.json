@@ -415,7 +415,9 @@
 						"defaultValue": false
 					}
 				},
-				"annotations": [],
+				"annotations": [
+					"copy"
+				],
 				"lastPublishTime": "2025-08-11T09:45:23Z"
 			},
 			"dependsOn": [
@@ -725,7 +727,9 @@
 						"defaultValue": "employee.csv"
 					}
 				},
-				"annotations": [],
+				"annotations": [
+					"copy"
+				],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
